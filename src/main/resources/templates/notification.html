@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Production Notification System">
+    <title>Production Notification System</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"> <!-- Подключаем стили -->
+    <script>
+        // Функция для динамического обновления времени
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const currentTime = hours + ':' + minutes + ':' + seconds;
+
+            document.getElementById('currentTime').textContent = currentTime;
+        }
+
+        // Обновляем время каждую секунду
+        setInterval(updateTime, 1000);
+    </script>
+</head>
+<body onload="updateTime()">
+<header>
+    <h1>Production Notification System (PNS)</h1>
+    <p id="timeDisplay">Текущее время: <span id="currentTime"></span></p>
+</header>
+
+<main>
+    <section>
+        <h2>Список сообщений</h2>
+        <ul>
+            <!-- Вывод списка сообщений -->
+            <li th:each="message : ${messages}" th:text="${message}"></li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 PNS. Все права защищены.</p>
+</footer>
+</body>
+</html>
