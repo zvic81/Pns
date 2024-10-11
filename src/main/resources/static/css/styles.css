@@ -29,6 +29,26 @@ li:nth-child(odd) {
 li:nth-child(even) {
     background-color: #62829b; /* Голубой фон для чётных сообщений */
 }
+.message-field {
+    width: 100%; /* Текстовые поля занимают всю ширину */
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине элемента */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
 #timeDisplay {
     position: absolute;
     top: 10px;
