@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Production Notification System">
+    <title>Production Notification System - Редактирование сообщений</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>Production Notification System (PNS)</h1>
+    <h2>Редактирование сообщений</h2>
+</header>
+
+<main>
+    <form th:action="@{/admin/edit_messages}" method="post">
+        <ul>
+            <!-- Поля для редактирования сообщений -->
+            <li th:each="message, iterStat : ${messages}">
+                <label th:for="${'message_' + iterStat.index}">Сообщение <span th:text="${iterStat.index + 1}"></span>:</label>
+                <!-- Используем одинаковое имя для всех полей -->
+                <input type="text" th:id="${'message_' + iterStat.index}" th:name="messages" th:value="${message}" class="message-field">
+            </li>
+        </ul>
+
+        <!-- Кнопка для сохранения изменений -->
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2024 PNS. Все права защищены.</p>
+</footer>
+</body>
+</html>

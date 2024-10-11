@@ -1,0 +1,63 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 40px; /* Размер текста сообщений */
+    margin: 10px 0;
+    padding: 10px;
+    color: #ffffff;
+}
+
+/* Чередование фона для сообщений */
+li:nth-child(odd) {
+    background-color: #8acb8e; /* Зелёный фон для нечётных сообщений */
+}
+
+li:nth-child(even) {
+    background-color: #62829b; /* Голубой фон для чётных сообщений */
+}
+.message-field {
+    width: 100%; /* Текстовые поля занимают всю ширину */
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box; /* Учитываем padding в общей ширине элемента */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#timeDisplay {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 18px;
+    color: #333;
+}
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+}
