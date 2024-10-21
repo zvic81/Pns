@@ -22,6 +22,9 @@
                 <!-- Используем одинаковое имя для всех полей -->
                 <input type="text" th:id="${'message_' + iterStat.index}" th:name="messages" th:value="${message}" class="message-field">
             </li>
+            <li>
+                <input type="text" id="newMessage" name="messages" th:placeholder="'Введите новое сообщение'" class="message-field">
+            </li>
         </ul>
 
         <!-- Кнопка для сохранения изменений -->
