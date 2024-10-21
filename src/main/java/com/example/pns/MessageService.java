@@ -20,4 +20,10 @@ public class MessageService {
         return messageRepository.findAll();
     }
 
+    public void clearAllMessages(){
+        messageRepository.deleteAll();
+    }
+    public void addMessage(PnsMessage pnsMessage){
+        messageRepository.save(pnsMessage);
+    }
 }
