@@ -18,6 +18,17 @@
         }
         // Обновляем время каждую секунду
         setInterval(updateTime, 1000);
+        function switchPage() {
+            const currentPage = parseInt(document.getElementById('currentPage').value);
+            const totalPages = parseInt(document.getElementById('totalPages').value);
+            const nextPage = currentPage === totalPages ? 1 : currentPage + 1;
+
+            // Переключаем на следующую страницу
+            window.location.href = '/notifications?page=' + nextPage;
+        }
+
+        // Переключаем страницу каждые 5 секунд
+        setInterval(switchPage, 5000);
     </script>
 </head>
 
@@ -35,6 +46,8 @@
             <li th:each="message : ${messages}" th:text="${message}"></li>
         </ul>
     </section>
+    <input type="hidden" id="currentPage" th:value="${currentPage}" />
+    <input type="hidden" id="totalPages" th:value="${totalPages}" />
 </main>
 
 <footer>
